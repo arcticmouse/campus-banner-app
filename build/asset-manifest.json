@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/campus-banners/static/css/main.ff7c8605.chunk.css",
+    "main.js": "/campus-banners/static/js/main.fdb92539.chunk.js",
+    "main.js.map": "/campus-banners/static/js/main.fdb92539.chunk.js.map",
+    "runtime-main.js": "/campus-banners/static/js/runtime-main.15723eef.js",
+    "runtime-main.js.map": "/campus-banners/static/js/runtime-main.15723eef.js.map",
+    "static/css/2.b90ce945.chunk.css": "/campus-banners/static/css/2.b90ce945.chunk.css",
+    "static/js/2.8e60638a.chunk.js": "/campus-banners/static/js/2.8e60638a.chunk.js",
+    "static/js/2.8e60638a.chunk.js.map": "/campus-banners/static/js/2.8e60638a.chunk.js.map",
+    "index.html": "/campus-banners/index.html",
+    "precache-manifest.2b12314f87ae97a1844b783fd1045f8a.js": "/campus-banners/precache-manifest.2b12314f87ae97a1844b783fd1045f8a.js",
+    "service-worker.js": "/campus-banners/service-worker.js",
+    "static/css/2.b90ce945.chunk.css.map": "/campus-banners/static/css/2.b90ce945.chunk.css.map",
+    "static/css/main.ff7c8605.chunk.css.map": "/campus-banners/static/css/main.ff7c8605.chunk.css.map",
+    "static/js/2.8e60638a.chunk.js.LICENSE": "/campus-banners/static/js/2.8e60638a.chunk.js.LICENSE",
+    "static/media/style.scss": "/campus-banners/static/media/berkeley_wordmark_blue_175x70.97c4d709.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.15723eef.js",
+    "static/css/2.b90ce945.chunk.css",
+    "static/js/2.8e60638a.chunk.js",
+    "static/css/main.ff7c8605.chunk.css",
+    "static/js/main.fdb92539.chunk.js"
+  ]
+}

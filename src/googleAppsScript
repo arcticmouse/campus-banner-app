@@ -1,0 +1,53 @@
+//located in scripts.google.com under campusbanners account
+//set to run every hour
+
+
+function getEmails() {
+  let d = new Date();
+  let month = d.getMonth();
+  let date = d.getDate();
+  let year = d.getFullYear();
+
+  let seconds = d.getSeconds();
+  let minutes = d.getMinutes();
+  let hour = d.getHours(); 
+  
+  let time1 = new Date(year, month, date, hour, minutes - 5, seconds).getTime();
+  
+  //var query = 'from:"SPK BOT" AND after:' + time1/1000;
+  //let query = 'is:sent subject:(Campus Banner Request) AND after:2020/01/22'; //for testing ind ev
+  let query = 'is:sent subject:(Campus Banner Request) AND after:' + (time1/1000 - 3600); //for testing ind ev
+  
+  let emails = GmailApp.search(query);
+
+  emails.forEach((element, index) => {
+      let messages = element.getMessages();
+      let x = messages.length - 1
+      let lastBody = messages[x].getBody(); //get last email body in the message thread
+      let rows = lastBody.split('<td');
+  
+      let contact1 = rows[2].replace(/(<([^>]+)>)/ig,"").slice(13) + ' ; ' +  rows[4].replace(/(<([^>]+)>)/ig,"").slice(13);
+      let contact2 = rows[8].replace(/(<([^>]+)>)/ig,"").slice(13) + ' ; ' +  rows[10].replace(/(<([^>]+)>)/ig,"").slice(13);
+      let department = rows[6].replace(/(<([^>]+)>)/ig,"").slice(13);
+      let startDate = new Date(rows[12].replace(/(<([^>]+)>)/ig,"").slice(13));
+      let endDate = new Date(rows[14].replace(/(<([^>]+)>)/ig,"").slice(13));
+      let markers = rows[16].slice(13).split('<br>');
+      markers.splice(-1,1);
+  
+      let calendar = CalendarApp.getCalendarById('campusbanners@berkeley.edu');
+  
+      markers.forEach((marker) => {
+        let title = department + ' ' + marker;
+        let event = calendar.createEvent(title, startDate, endDate,
+          {
+            location: marker.substr(0, marker.indexOf(' ')),
+            description: 'Contact: ' + contact1 + ' ' + contact2
+          }
+        );
+        Logger.log('Event ID: ' + event.id);
+      })
+  
+      let y = 'ya'
+  })
+    
+}
